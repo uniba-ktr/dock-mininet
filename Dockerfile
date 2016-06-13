@@ -1,5 +1,5 @@
 FROM debian
-MAINTAINER David Bainbridge <dbainbri@ciena.com>
+MAINTAINER Marcel Grossmann <whatever4711@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 

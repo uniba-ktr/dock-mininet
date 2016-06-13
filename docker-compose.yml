@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  mn:
+    image: unibaktr/mininet-docker
+    privileged: true
+    stdin_open: true
+    tty: true
+    volumes:
+      - $PWD/data:/data
+    command: /data/topo.py 

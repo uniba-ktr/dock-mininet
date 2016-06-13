@@ -2,7 +2,7 @@
 set -e
 
 usage() {
-  echo "docker run ciena/mininet [options]"
+  echo "docker run unibaktr/mininet-docker [options]"
   echo "    -h                         display help information"
   echo "    /path/file ARG1 .. ARGn    execute the specfified local file"
   echo "    URL ARG1 .. ARGn           download script from URL and execute it"
