@@ -8,7 +8,7 @@ services:
     tty: true
     volumes:
       - $PWD/data:/data
-    command: --mac --switch=ovsk,protocols=OpenFlow13 --controller=remote,ip=192.168.47.12,port=6653 --topo=tree,3
+    command: --mac --switch ovsk --topo single,3
 
   odl:
     build:
