@@ -2,6 +2,9 @@
 This contains the files to construct a mininet docker image that can execute
 mininet simulated networks.
 
+## Prerequisites
+Make sure your kernel supports Openvswitch and load the ovs module with `sudo modprobe openvswitch`.
+
 ## Privileged Mode
 It is important to run this container in Privileged mode (`--privileged`) so that if can manipulate the network interface properties and devices. I suspect this can also be achieved with the capabilities (`--cap-add`) features of docker, but this has not been investigated.
 
