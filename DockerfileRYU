@@ -8,6 +8,11 @@ RUN cd ryu && \
     pip install -r tools/pip-requires && \
     python setup.py install
 
+RUN apk add --update libffi-dev openssl-dev libxml2 libxml2-dev libxslt libxslt-dev && \
+    cd /ryu/ryu/app && \
+    git clone https://bitbucket.org/sdnhub/ryu-starter-kit sdnhub_apps && \
+    pip install networkx bitarray paramiko eventlet xml_compare pyflakes pylint
+
 WORKDIR ryu
 
 ENTRYPOINT ["/usr/local/bin/ryu-manager"]

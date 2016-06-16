@@ -32,7 +32,11 @@ services:
         ipv4_address: 192.168.16.10
     expose:
       - 6653
-    command: ryu/app/simple_switch_13.py
+      - 8080
+    volumes:
+      - $PWD/apps:/ryu/ryu/app/custom
+    #entrypoint: /bin/sh
+    command: --observe-links ryu/app/sdnhub_apps/fileserver.py ryu/app/rest_topology.py ryu/app/ofctl_rest.py ryu/app/sdnhub_apps/host_tracker.py ryu/app/sdnhub_apps/tap.py
 
   mngui:
     build:
