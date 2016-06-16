@@ -8,6 +8,9 @@ RUN cd ryu && \
     pip install -r tools/pip-requires && \
     python setup.py install
 
+RUN cd /ryu/ryu/app && mkdir custom
+VOLUME ["/ryu/ryu/app/custom"]
+
 WORKDIR ryu
 
 ENTRYPOINT ["/usr/local/bin/ryu-manager"]
