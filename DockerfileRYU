@@ -15,5 +15,7 @@ RUN apk add --update libffi-dev openssl-dev libxml2 libxml2-dev libxslt libxslt-
 
 WORKDIR ryu
 
-ENTRYPOINT ["/usr/local/bin/ryu-manager"]
+ENV PYTHONPATH=.
+
+ENTRYPOINT ["ryu-manager"]
 CMD ["--help"]
