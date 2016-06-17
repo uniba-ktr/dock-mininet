@@ -34,7 +34,7 @@ services:
       - 6653
       - 8080
     volumes:
-      - $PWD/bugfixes/ofctl_rest.py:/ryu/ryu/app/ofctl_rest.py
+      #- $PWD/bugfixes/ofctl_rest.py:/ryu/ryu/app/ofctl_rest.py
       - $PWD/apps:/ryu/ryu/app/custom
       #- $PWD/ryu-starter-kit:/ryu/ryu/app/sdnhub_apps
     #entrypoint: /bin/sh
