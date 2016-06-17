@@ -10,7 +10,7 @@ RUN cd ryu && \
 
 RUN apk add --update libffi-dev openssl-dev libxml2 libxml2-dev libxslt libxslt-dev && \
     cd /ryu/ryu/app && \
-    git clone https://bitbucket.org/sdnhub/ryu-starter-kit sdnhub_apps && \
+    git clone https://github.com/whatever4711/ryu-starter-kit.git sdnhub_apps && \
     pip install networkx bitarray paramiko eventlet xml_compare pyflakes pylint
 
 WORKDIR ryu
