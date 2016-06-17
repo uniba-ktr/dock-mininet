@@ -9,6 +9,8 @@ RUN cd ryu && \
     python setup.py install
 # Pending PR
 COPY bugfixes/ofctl_rest.py /ryu/ryu/app/ofctl_rest.py
+COPY bugfixes/wsgi.py /ryu/ryu/app/wsgi.py
+
 RUN apk add --update libffi-dev openssl-dev libxml2 libxml2-dev libxslt libxslt-dev && \
     cd /ryu/ryu/app && \
     git clone https://github.com/whatever4711/ryu-starter-kit.git sdnhub_apps && \
