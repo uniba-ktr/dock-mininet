@@ -19,7 +19,9 @@ services:
     networks:
       controller:
         ipv4_address: 192.168.16.100
-    command: --mac --switch=ovsk,protocols=OpenFlow13 --controller=remote,ip=192.168.16.10,port=6653 --topo=linear,3
+    #entrypoint: /bin/bash
+    command: /data/mininetSlice.py
+    #command: --mac --switch=ovsk,protocols=OpenFlow13 --controller=remote,ip=192.168.16.10,port=6653 --topo=linear,3
 
   ryu:
     build:
@@ -34,11 +36,13 @@ services:
       - 6653
       - 8080
     volumes:
+      - $PWD/bugfixes/stplib.py:/ryu/ryu/lib/stplib.py
+      #- $PWD/bugfixes/bpdu.py:/ryu/ryu/lib/packet/bpdu.py
       #- $PWD/bugfixes/ofctl_rest.py:/ryu/ryu/app/ofctl_rest.py
       - $PWD/apps:/ryu/ryu/app/custom
-      #- $PWD/ryu-starter-kit:/ryu/ryu/app/sdnhub_apps
+      # $PWD/ryu-starter-kit:/ryu/ryu/app/sdnhub_apps
     #entrypoint: /bin/sh
-    command: --verbose --observe-links ryu/app/sdnhub_apps/fileserver.py ryu/app/rest_topology.py ryu/app/ofctl_rest.py ryu/app/sdnhub_apps/host_tracker_rest.py ryu/app/sdnhub_apps/tap_rest.py ryu/app/simple_switch_13.py
+    command: --verbose --observe-links --observe-links ryu/app/custom/simple_switch_stp_13.py
 
   mngui:
     build:
