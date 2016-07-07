@@ -27,7 +27,7 @@ RUN \
     openssh-client \
     patch \
     vim \
-    dnsutils
+    dnsutils \
 
 # Clone and install.
     && git clone -b 2.2.1 $MININET_REPO \
