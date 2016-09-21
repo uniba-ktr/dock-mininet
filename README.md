@@ -1,6 +1,6 @@
 # Mininet Docker Image
 
-[![](https://images.microbadger.com/badges/image/unibaktr/mininet-docker.svg)](https://microbadger.com/images/unibaktr/mininet-docker "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/unibaktr/mininet.svg)](https://microbadger.com/images/unibaktr/mininet "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/unibaktr/mininet.svg)](https://microbadger.com/images/unibaktr/mininet "Get your own version badge on microbadger.com")
 
 This contains the files to construct a mininet docker image that can execute
 mininet simulated networks.
