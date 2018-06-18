@@ -31,7 +31,7 @@ RUN \
     dnsutils \
 
 # Clone and install.
-    && git clone -b 2.2.1 $MININET_REPO \
+    && git clone -b 2.2.2 $MININET_REPO \
 
 # A few changes to make the install script behave.
     && sed -e 's/sudo //g' \
