@@ -28,28 +28,25 @@ RUN \
     openssh-client \
     patch \
     vim \
-    dnsutils \
+    dnsutils 
 
 # Clone and install.
-    && git clone -b 2.2.2 $MININET_REPO \
-
+RUN git clone -b 2.2.2 $MININET_REPO \
 # A few changes to make the install script behave.
     && sed -e 's/sudo //g' \
+        -e 's/DEBIAN_FRONTEND=noninteractive //g' \
     	-e 's/~\//\//g' \
     	-e 's/\(apt-get -y install\)/\1 --no-install-recommends --no-install-suggests/g' \
     	-i $MININET_INSTALLER \
-
 # Install script expects to find this. Easier than patching that part of the script.
     && touch /.bashrc \
-
 # Proceed with the install.
-    && chmod +x $MININET_INSTALLER \
-    && ./$MININET_INSTALLER -nfv \
+    && chmod +x $MININET_INSTALLER 
 
+RUN  ./$MININET_INSTALLER -nfv \
 # Clean up source.
     && rm -rf /tmp/mininet \
               /tmp/openflow \
-
 # Clean up packages.
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
